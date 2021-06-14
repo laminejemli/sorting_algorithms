@@ -1,0 +1,11 @@
+#include "sort.h"
+/**
+ * swap all arg
+ * swap array
+ */
+void swap(int *xp, int *yp)
+{
+	int temp = *xp;
+	*xp = *yp;
+	*yp = temp;
+}
