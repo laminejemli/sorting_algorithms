@@ -7,8 +7,7 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t step, i;
-	int temp;
+	unsigned int step, i, temp;
 
 		for  (step = 0; step < size - 1; step++)
 		{
