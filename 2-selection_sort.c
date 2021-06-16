@@ -1,4 +1,17 @@
 #include "sort.h"
+
+/**
+ * swap all arg
+ * swap array
+ */
+
+void swap(int *h, int *p)
+{
+	int temp;
+	temp = *h;
+	*h = *p;
+	*p = temp;
+}
 /**
  * selection_sort - function that sorts an array of integers in ascending order
  * using the Selection sort algorithm
