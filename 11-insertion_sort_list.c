@@ -8,30 +8,33 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *aux1 = NULL, *aux2 = NULL, *a = NULL, *b = NULL, *head;
-	if (!list || !(*list) || !(*list)->next)
-		return;
+	listint_t *aux1 = NULL, *aux2 = NULL, *a = NULL, *b = NULL, *head, *prev;
+	int c;
+	if (list == NULL || (*list) == NULL || (*list)->next == NULL)
+	{
+	        return;
+	}
 	head = *list;
 	while (head)
 	{
-		a = head;
-		b = a->prev;
-		while (b && b->n > a->n)
+		prev = head->prev;
+		                c = head->n;
+		while (prev && prev->n > c)
 		{
 			aux1 = a->prev;
 			aux2 = b->next;
-			b->next = a->next;
-			a->prev = b->prev;
-			b->prev = a;
-			a->prev = b;
 			if (aux1)
-				aux1->next = a;
+				aux1->next = b;
 			if (aux2)
-				aux2->prev = b;
-			if (!a->prev)
-				*list = a;
+				aux2->prev = a;
+			a->next = aux2;
+			a->prev = b;
+			b->next = a;
+			b->prev = aux1;
+			if (aux1 == NULL)
+				*head = b;
 			print_list(*list);
-			b = a->prev;
+			prev = head->prev;
 		}
 		head = head->next;
 	}
