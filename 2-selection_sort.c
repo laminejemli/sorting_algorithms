@@ -1,13 +1,15 @@
 #include "sort.h"
 
 /**
- * swap all arg
- * swap array
+ * swap - all arg to the sorting
+ * @p: swap h temp
+ * @h: swap p temp
  */
 
 void swap(int *h, int *p)
 {
 	int temp;
+
 	temp = *h;
 	*h = *p;
 	*p = temp;
@@ -21,6 +23,7 @@ void swap(int *h, int *p)
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j, min_idx;
+
 	for (i = 0; i < size - 1; i++)
 	{
 		min_idx = i;
