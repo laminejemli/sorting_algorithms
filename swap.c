@@ -5,9 +5,10 @@
  * swap array
  */
 
-void swap(int *xp, int *yp)
+void swap(int *h, int *p)
 {
-	int temp = *xp;
-	*xp = *yp;
-	*yp = temp;
+	int temp;
+	temp = *h;
+	*h = *p;
+	*p = temp;
 }
