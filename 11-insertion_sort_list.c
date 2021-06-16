@@ -30,8 +30,8 @@ void insertion_sort_list(listint_t **list)
 				aux2->prev = b;
 			if (!a->prev)
 				*list = a;
-			print_list(*list);
 			b = a->prev;
+		print_list(*list);
 		}
 		head = head->next;
 	}
